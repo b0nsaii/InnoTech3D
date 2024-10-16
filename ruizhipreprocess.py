@@ -49,6 +49,12 @@ def extract_point_features(box, points):
     )
     selected_points = points[mask]
 
+    pointmatrix = np.array([selected_points['x'], selected_points['y'], selected_points['z']])
+    rotatingmatrix = np.random.rand(3, 3)
+
+    np.matmul(pointmatrix, rotatingmatrix)
+        
+
     if len(selected_points) == 0:
         return pd.Series([0] * 10)
 
@@ -96,7 +102,6 @@ test_results = pd.DataFrame({
 
 # 打印结果
 print(test_results)
-h
 
 # 输出分类报告
 print(classification_report(y_test, y_pred))
