@@ -123,3 +123,7 @@ dmypy.json
 *.iml
 *.iws
 *.ipr
+
+#training data
+data
+*.xyz
